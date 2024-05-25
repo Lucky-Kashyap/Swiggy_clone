@@ -1,6 +1,32 @@
 import React from "react";
 
 const Header = () => {
+  const navbarItems = [
+    {
+      name: "Swiggy Corporate",
+      icon: "fi-rr-shopping-bag",
+    },
+    {
+      name: "Search",
+      icon: "fi-rr-search",
+    },
+    {
+      name: "Offers",
+      icon: "fi-rr-badge-percent",
+    },
+    {
+      name: "Help",
+      icon: "fi-sr-life-ring",
+    },
+    {
+      name: "Sign in",
+      icon: "fi-rr-user",
+    },
+    {
+      name: "Cart",
+      icon: "fi-rr-shopping-cart-add",
+    },
+  ];
   return (
     <div className="w-full shadow-md h-20 flex justify-center items-center">
       {/* <svg
@@ -42,31 +68,15 @@ const Header = () => {
             <i className="fi text-2xl mt-2 text-orange-500 fi-rs-angle-small-down"></i>
           </div>
         </div>
-        <div className="flex items-center gap-6">
-          <div className="flex items-center gap-2 cursor-pointer">
-            <i className="fi fi-rr-shopping-bag"></i>
-            <p className="font-semibold text-[#3d4152]">Swiggy corporate</p>
-          </div>
-          <div className="flex items-center gap-2 cursor-pointer">
-            <i className="fi fi-rr-shopping-bag"></i>
-            <p className="font-semibold text-[#3d4152]">Search</p>
-          </div>
-          <div className="flex items-center gap-2 cursor-pointer">
-            <i className="fi fi-rr-shopping-bag"></i>
-            <p className="font-semibold text-[#3d4152]">Offers</p>
-          </div>
-          <div className="flex items-center gap-2 cursor-pointer">
-            <i className="fi fi-rr-shopping-bag"></i>
-            <p className="font-semibold text-[#3d4152]">Help</p>
-          </div>
-          <div className="flex items-center gap-2 cursor-pointer">
-            <i className="fi fi-rr-shopping-bag"></i>
-            <p className="font-semibold text-[#3d4152]">Sign in</p>
-          </div>
-          <div className="flex items-center gap-2 cursor-pointer">
-            <i className="fi fi-rr-shopping-bag"></i>
-            <p className="font-semibold text-[#3d4152]">Cart</p>
-          </div>
+        <div className="flex items-center gap-14">
+          {navbarItems.map((item, index) => (
+            <div key={index} className="flex items-center gap-3 cursor-pointer">
+              <i className={`fi text-xl ${item.icon} mt-1 text-[#3d4152]`}></i>
+              <p className="font-semibold text-lg text-[#3d4152]">
+                {item.name}
+              </p>
+            </div>
+          ))}
         </div>
       </div>
     </div>
