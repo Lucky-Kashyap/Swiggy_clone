@@ -1,8 +1,25 @@
-# React + Vite
+# Swiggy Clone
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Food ordering Web App
 
-Currently, two official plugins are available:
+- Create Header
+- Create Slider
+- Create Restaurant Slider Cards
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+#### To run this web app
+
+- you can clone repo and run command
+
+      npm i
+
+- It will install the necessary packages
+- Make sure you have CORS Plugin on to avoid API failing
+- I will configure this CORS API issue (resolve)
+
+## Thanks to Namaste React Course for diving deep into it
+
+#### Mentor : Akshay Saini
+
+#### Happy Learning! ✨
+
+## Made with ☕️ by Divyanshu Kashyap

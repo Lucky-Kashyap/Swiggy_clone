@@ -17,6 +17,8 @@ const TopRestaurant = () => {
           ?.restaurants;
 
       setData(cards);
+
+      // console.log(cards);
     } catch (err) {
       console.log(err);
     }
@@ -27,15 +29,15 @@ const TopRestaurant = () => {
   }, []);
 
   const handlePrev = () => {
-    val >= 124 ? "" : setVal((prev) => prev + 31);
+    setVal((prev) => prev - 50);
   };
 
   const handleNext = () => {
-    val <= 0 ? "" : setVal((prev) => prev - 31);
+    setVal((prev) => prev + 50);
   };
 
   return (
-    <div className="mt-14">
+    <div className="mt-14 w-full">
       <div className="flex justify-between mt-5">
         <h1 className="text-[#282c3f] text-4xl font-bold">
           Top restaurant chains in Delhi?
@@ -71,19 +73,22 @@ const TopRestaurant = () => {
           </div>
         </div>
       </div>
-      <div className={`flex mt-4 gap-5`}>
+      <div
+        style={{ translate: `-${val}%` }}
+        className={`flex mt-4 gap-5 w-full duration-300`}
+      >
         {data?.map((restaurant, index) => (
-          <div className="">
+          <div className="min-w-[295px] h-[182px]" key={index}>
             <img
-              className="w-64"
-              src={`https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_288,h_360/${restaurant?.info.cloudinaryImageId}`}
+              className="w-full h-full object-cover rounded-3xl"
+              src={`https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/${restaurant?.info.cloudinaryImageId}`}
               alt="restaurant-card"
             />
           </div>
         ))}
       </div>
 
-      <hr className="border" />
+      <hr className="border mt-4" />
     </div>
   );
 };

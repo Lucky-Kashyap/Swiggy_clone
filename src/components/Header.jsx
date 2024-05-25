@@ -68,9 +68,9 @@ const Header = () => {
             <i className="fi text-2xl mt-2 text-orange-500 fi-rs-angle-small-down"></i>
           </div>
         </div>
-        <div className="flex items-center gap-14">
+        <div className="flex items-center gap-6">
           {navbarItems.map((item, index) => (
-            <div key={index} className="flex items-center gap-3 cursor-pointer">
+            <div key={index} className="flex items-center gap-6 cursor-pointer">
               <i className={`fi text-xl ${item.icon} mt-1 text-[#3d4152]`}></i>
               <p className="font-semibold text-lg text-[#3d4152]">
                 {item.name}
