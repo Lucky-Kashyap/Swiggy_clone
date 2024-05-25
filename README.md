@@ -6,6 +6,11 @@
 - Create Slider
 - Create Restaurant Slider Cards
 
+#### Header & Restaurant Slider view:
+
+![Screenshot (3799)](https://github.com/Lucky-Kashyap/Swiggy_clone/assets/88204554/c3f43971-6d1b-418c-87ab-2e04cff9bfce)
+
+
 #### To run this web app
 
 - you can clone repo and run command
