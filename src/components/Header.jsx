@@ -31,7 +31,7 @@ const Header = () => {
         </defs>
       </svg> */}
       <div className="w-[70%] flex justify-between items-center">
-        <div className="flex items-center">
+        <div className="flex items-center cursor-pointer">
           <img
             className="w-24"
             src="https://imgs.search.brave.com/PypOujJ6u1N1mOYSbhrUud9meTgC4ie1ACWyopXJVbw/rs:fit:860:0:0/g:ce/aHR0cHM6Ly8xMDAw/bG9nb3MubmV0L3dw/LWNvbnRlbnQvdXBs/b2Fkcy8yMDIxLzA1/L1N3aWdneS1sb2dv/LTUwMHgyODEucG5n"
@@ -43,27 +43,27 @@ const Header = () => {
           </div>
         </div>
         <div className="flex items-center gap-6">
-          <div className="flex items-center gap-2">
+          <div className="flex items-center gap-2 cursor-pointer">
             <i className="fi fi-rr-shopping-bag"></i>
             <p className="font-semibold text-[#3d4152]">Swiggy corporate</p>
           </div>
-          <div className="flex items-center gap-2">
+          <div className="flex items-center gap-2 cursor-pointer">
             <i className="fi fi-rr-shopping-bag"></i>
             <p className="font-semibold text-[#3d4152]">Search</p>
           </div>
-          <div className="flex items-center gap-2">
+          <div className="flex items-center gap-2 cursor-pointer">
             <i className="fi fi-rr-shopping-bag"></i>
             <p className="font-semibold text-[#3d4152]">Offers</p>
           </div>
-          <div className="flex items-center gap-2">
+          <div className="flex items-center gap-2 cursor-pointer">
             <i className="fi fi-rr-shopping-bag"></i>
             <p className="font-semibold text-[#3d4152]">Help</p>
           </div>
-          <div className="flex items-center gap-2">
+          <div className="flex items-center gap-2 cursor-pointer">
             <i className="fi fi-rr-shopping-bag"></i>
             <p className="font-semibold text-[#3d4152]">Sign in</p>
           </div>
-          <div className="flex items-center gap-2">
+          <div className="flex items-center gap-2 cursor-pointer">
             <i className="fi fi-rr-shopping-bag"></i>
             <p className="font-semibold text-[#3d4152]">Cart</p>
           </div>
