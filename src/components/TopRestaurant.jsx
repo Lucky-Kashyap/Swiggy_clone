@@ -1,32 +1,7 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 
-const TopRestaurant = () => {
-  const [data, setData] = useState([]);
-
+const TopRestaurant = ({ data }) => {
   const [val, setVal] = useState(0);
-
-  async function fetchData() {
-    try {
-      const data = await fetch(
-        "https://www.swiggy.com/dapi/restaurants/list/v5?lat=26.95250&lng=75.71050&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING"
-      );
-      const res = await data.json();
-
-      const cards =
-        res?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle
-          ?.restaurants;
-
-      setData(cards);
-
-      // console.log(cards);
-    } catch (err) {
-      console.log(err);
-    }
-  }
-
-  useEffect(() => {
-    fetchData();
-  }, []);
 
   const handlePrev = () => {
     setVal((prev) => prev - 50);
@@ -78,12 +53,18 @@ const TopRestaurant = () => {
         className={`flex mt-4 gap-5 w-full duration-300`}
       >
         {data?.map((restaurant, index) => (
-          <div className="min-w-[295px] h-[182px]" key={index}>
+          <div className="min-w-[295px] h-[182px] relative" key={index}>
             <img
               className="w-full h-full object-cover rounded-3xl"
               src={`https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/${restaurant?.info.cloudinaryImageId}`}
               alt="restaurant-card"
             />
+            <div className="bg-gradient-to-t from-black from-1% to-transparent to-40% rounded-2xl w-full h-full absolute top-0"></div>
+            <p className="absolute bottom-0 text-white text-2xl ml-2 mb1 font-bold">
+              {restaurant.info.aggregatedDiscountInfoV3?.header +
+                " " +
+                restaurant.info.aggregatedDiscountInfoV3?.subHeader}
+            </p>
           </div>
         ))}
       </div>

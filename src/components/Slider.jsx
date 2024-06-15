@@ -1,28 +1,7 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 
-const Slider = () => {
-  const [data, setData] = useState([]);
+const Slider = ({ data }) => {
   const [val, setVal] = useState(0);
-  async function fetchData() {
-    try {
-      const data = await fetch(
-        "https://www.swiggy.com/dapi/restaurants/list/v5?lat=26.95250&lng=75.71050&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING"
-      );
-      const res = await data.json();
-      // console.log(res);
-      // console.log(res?.data?.cards[0]?.card?.card?.imageGridCards?.info);
-
-      const cards = res?.data?.cards[0]?.card?.card?.imageGridCards?.info;
-
-      setData(cards);
-    } catch (err) {
-      console.log(err);
-    }
-  }
-
-  useEffect(() => {
-    fetchData();
-  }, []);
 
   const handlePrev = () => {
     val >= 124 ? "" : setVal((prev) => prev + 31);
