@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import RestaurantCard from "./RestaurantCard";
 
 const TopRestaurant = ({ data }) => {
   const [val, setVal] = useState(0);
@@ -53,18 +54,8 @@ const TopRestaurant = ({ data }) => {
         className={`flex mt-4 gap-5 w-full duration-300`}
       >
         {data?.map((restaurant, index) => (
-          <div className="min-w-[295px] h-[182px] relative" key={index}>
-            <img
-              className="w-full h-full object-cover rounded-3xl"
-              src={`https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/${restaurant?.info.cloudinaryImageId}`}
-              alt="restaurant-card"
-            />
-            <div className="bg-gradient-to-t from-black from-1% to-transparent to-40% rounded-2xl w-full h-full absolute top-0"></div>
-            <p className="absolute bottom-0 text-white text-2xl ml-2 mb1 font-bold">
-              {restaurant.info.aggregatedDiscountInfoV3?.header +
-                " " +
-                restaurant.info.aggregatedDiscountInfoV3?.subHeader}
-            </p>
+          <div className="hover:scale-95 duration-300 cursor-pointer">
+            <RestaurantCard restaurant={restaurant} key={index} />
           </div>
         ))}
       </div>

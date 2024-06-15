@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import Slider from "./Slider";
 import TopRestaurant from "./TopRestaurant";
+import OnlineFoodDelivery from "./OnlineFoodDelivery";
 
 const Body = () => {
   const [topRestaurantData, setTopRestaurantData] = useState([]);
@@ -35,6 +36,7 @@ const Body = () => {
       <div className="w-[75%] mx-auto mt-4 overflow-hidden">
         <Slider data={sliderData} />
         <TopRestaurant data={topRestaurantData} />
+        <OnlineFoodDelivery data={topRestaurantData} />
       </div>
     </div>
   );
