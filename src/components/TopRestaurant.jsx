@@ -54,8 +54,11 @@ const TopRestaurant = ({ data }) => {
         className={`flex mt-4 gap-5 w-full duration-300`}
       >
         {data?.map((restaurant, index) => (
-          <div className="hover:scale-95 duration-300 cursor-pointer">
-            <RestaurantCard restaurant={restaurant} key={index} />
+          <div
+            key={index}
+            className="hover:scale-95 duration-300 cursor-pointer"
+          >
+            <RestaurantCard restaurant={restaurant} />
           </div>
         ))}
       </div>

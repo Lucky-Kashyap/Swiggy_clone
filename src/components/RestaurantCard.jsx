@@ -1,8 +1,18 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 function RestaurantCard({ restaurant }) {
+  // const {id}=useParams();
+
+  // console.table(restaurant.info?.id);
+
+  // console.log(id);
+  // console.log(restaurant?.cta.link.split('/'));
+
+  let link = restaurant?.cta?.link.split("/").at(4);
+
   return (
-    <>
+    <Link to={`/restaurantMenu/${link}`}>
       <div className="min-w-[295px] h-[182px] relative">
         <img
           className="w-full h-full object-cover rounded-3xl"
@@ -37,7 +47,7 @@ function RestaurantCard({ restaurant }) {
           {restaurant.info?.locality}
         </p>
       </div>
-    </>
+    </Link>
   );
 }
 

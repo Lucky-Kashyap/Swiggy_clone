@@ -9,8 +9,11 @@ function OnlineFoodDelivery({ data }) {
       </h1>
       <div className="grid grid-cols-4 gap-5">
         {data?.map((restaurant, index) => (
-          <div className="hover:scale-95 duration-300 cursor-pointer">
-            <RestaurantCard restaurant={restaurant} key={index} />
+          <div
+            key={index}
+            className="hover:scale-95 duration-300 cursor-pointer"
+          >
+            <RestaurantCard restaurant={restaurant} />
           </div>
         ))}
       </div>

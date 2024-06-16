@@ -1,4 +1,5 @@
 import React from "react";
+import { Link, Outlet } from "react-router-dom";
 
 const Header = () => {
   const navbarItems = [
@@ -28,8 +29,9 @@ const Header = () => {
     },
   ];
   return (
-    <div className="w-full shadow-md h-20 flex justify-center items-center">
-      {/* <svg
+    <>
+      <div className="w-full shadow-md h-24 sticky bg-white z-10 top-0 flex justify-center items-center">
+        {/* <svg
         className="_8pSp-"
         viewBox="0 0 559 825"
         height="49"
@@ -56,30 +58,39 @@ const Header = () => {
           </linearGradient>
         </defs>
       </svg> */}
-      <div className="w-[70%] flex justify-between items-center">
-        <div className="flex items-center cursor-pointer">
-          <img
-            className="w-24"
-            src="https://imgs.search.brave.com/PypOujJ6u1N1mOYSbhrUud9meTgC4ie1ACWyopXJVbw/rs:fit:860:0:0/g:ce/aHR0cHM6Ly8xMDAw/bG9nb3MubmV0L3dw/LWNvbnRlbnQvdXBs/b2Fkcy8yMDIxLzA1/L1N3aWdneS1sb2dv/LTUwMHgyODEucG5n"
-            alt="swiggy-logo"
-          />
-          <div className="flex items-center gap-2">
-            <p className="font-bold border-b-2 border-black">others</p>
-            <i className="fi text-2xl mt-2 text-orange-500 fi-rs-angle-small-down"></i>
+        <div className="w-[70%] flex justify-between items-center">
+          <div className="flex items-center cursor-pointer">
+            <Link to={"/"}>
+              <img
+                className="w-24"
+                src="https://imgs.search.brave.com/PypOujJ6u1N1mOYSbhrUud9meTgC4ie1ACWyopXJVbw/rs:fit:860:0:0/g:ce/aHR0cHM6Ly8xMDAw/bG9nb3MubmV0L3dw/LWNvbnRlbnQvdXBs/b2Fkcy8yMDIxLzA1/L1N3aWdneS1sb2dv/LTUwMHgyODEucG5n"
+                alt="swiggy-logo"
+              />
+            </Link>
+            <div className="flex items-center gap-2">
+              <p className="font-bold border-b-2 border-black">others</p>
+              <i className="fi text-2xl mt-2 text-orange-500 fi-rs-angle-small-down"></i>
+            </div>
+          </div>
+          <div className="flex items-center gap-6">
+            {navbarItems.map((item, index) => (
+              <div
+                key={index}
+                className="flex items-center gap-6 cursor-pointer"
+              >
+                <i
+                  className={`fi text-xl ${item.icon} mt-1 text-[#3d4152]`}
+                ></i>
+                <p className="font-semibold text-lg text-[#3d4152]">
+                  {item.name}
+                </p>
+              </div>
+            ))}
           </div>
         </div>
-        <div className="flex items-center gap-6">
-          {navbarItems.map((item, index) => (
-            <div key={index} className="flex items-center gap-6 cursor-pointer">
-              <i className={`fi text-xl ${item.icon} mt-1 text-[#3d4152]`}></i>
-              <p className="font-semibold text-lg text-[#3d4152]">
-                {item.name}
-              </p>
-            </div>
-          ))}
-        </div>
       </div>
-    </div>
+      <Outlet />
+    </>
   );
 };
 
