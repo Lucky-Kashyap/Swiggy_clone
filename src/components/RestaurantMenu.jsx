@@ -1,8 +1,11 @@
 import React, { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 
 function RestaurantMenu() {
   const [menuData, setMenuData] = useState([]);
+  const [resInfo, setResInfo] = useState([]);
+  const [discountData, setDiscountData] = useState([]);
+
   const { id } = useParams();
 
   // console.log(id.split('-')[-1]);
@@ -16,7 +19,18 @@ function RestaurantMenu() {
       );
       let res = await data.json();
       // console.log(res);
-      let menuCards = res?.data?.cards[0]?.card?.card?.text;
+      // console.log(res?.data?.cards[2]?.card?.card?.info);
+
+      let menuCards =
+        res?.data?.cards[4]?.groupedCard?.cardGroupMap?.REGULAR?.cards[1]?.card
+          ?.card;
+
+      // console.log(menuCards);
+
+      setResInfo(res?.data?.cards[2]?.card?.card?.info);
+      setDiscountData(
+        res?.data?.cards[3]?.card?.card?.gridElements?.infoWithStyle?.offers
+      );
       setMenuData(menuCards);
     } catch (err) {
       console.log(err.message);
@@ -26,10 +40,35 @@ function RestaurantMenu() {
     fetchMenu();
   }, []);
   return (
-    <div>
-      <h4>
-        RestaurantMenu {idSplit} {menuData}
-      </h4>
+    <div className="w-full">
+      <div className="w-[800px] mx-auto pt-8">
+        <p className="text-[12px] text-slate-500">
+          <Link to={"/"}>
+            <span className="hover:text-slate-700 hover:cursor-pointer">
+              Home
+            </span>
+          </Link>
+          /
+          <Link to={"/"}>
+            <span className="hover:text-slate-700 hover:cursor-pointer">
+              {resInfo?.city}
+            </span>
+          </Link>
+          /
+          <Link to={"/"}>
+            <span className="hover:text-slate-700 hover:cursor-pointer">
+              {resInfo?.name}
+            </span>
+          </Link>
+        </p>
+        <h1 className="font-bold pt-6 text-2xl">{resInfo?.name}</h1>
+
+        <div className="w-full h-[206px] p-5 bg-gradient-to-t from-slate-200/70 mt-3 rounded-[30px]">
+          <div className="w-full h-full border border-slate-200/70 p-4 rounded-[30px]">
+            hello
+          </div>
+        </div>
+      </div>
     </div>
   );
 }
