@@ -11,6 +11,8 @@ function RestaurantCard({ restaurant }) {
 
   let link = restaurant?.cta?.link.split("/").at(4);
 
+  // console.log(restaurant);
+
   return (
     <Link to={`/restaurantMenu/${link}`}>
       <div className="min-w-[295px] h-[182px] relative">

@@ -10,7 +10,7 @@ const Slider = ({ data }) => {
   const handleNext = () => {
     val <= 0 ? "" : setVal((prev) => prev - 31);
   };
-
+  // console.log(data);
   return (
     <div>
       <div className="flex justify-between mt-5">
